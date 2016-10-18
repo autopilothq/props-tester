@@ -1,0 +1,38 @@
+var React          = require('react');
+var expect         = require('chai').expect;
+var requiredTester = require('../../lib/testers/required');
+
+
+
+describe('testers.required', function() {
+  it('returns true when expected required prop is missing', function() {
+    function HelloWorld() { return null; }
+    HelloWorld.propTypes = { message: React.PropTypes.any.isRequired };
+
+    var isRequired = requiredTester(HelloWorld, 'message', {});
+    expect(isRequired).to.equal(true);
+  });
+
+
+
+  it('returns false when validation error does not relates to the prop', function() {
+    function HelloWorld() { return null; }
+    HelloWorld.propTypes = {
+      message: React.PropTypes.any.isRequired,
+      color: React.PropTypes.any.isRequired,
+    };
+
+    var isRequired = requiredTester(HelloWorld, 'message', {message: 'Hi'});
+    expect(isRequired).to.equal(false);
+  });
+
+
+
+  it('returns false when validation error does not relates to prop being required', function() {
+    function HelloWorld() { return null; }
+    HelloWorld.propTypes = { message: React.PropTypes.string.isRequired };
+
+    var isRequired = requiredTester(HelloWorld, 'message', {message: 2});
+    expect(isRequired).to.equal(false);
+  });
+});

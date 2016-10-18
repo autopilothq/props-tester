@@ -1,0 +1,25 @@
+{
+  "name": "props-validator",
+  "version": "0.0.0",
+  "description": "Make your React prop testing joyful",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha test"
+  },
+  "author": "Autopilot",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": "^15.0.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.1"
+  },
+  "dependencies": {
+    "is_js": "^0.9.0",
+    "lodash.clonedeep": "^4.5.0",
+    "lodash.get": "^4.4.2",
+    "lodash.set": "^4.3.2",
+    "lodash.unset": "^4.5.2"
+  }
+}
