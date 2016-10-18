@@ -1,5 +1,5 @@
 {
-  "name": "props-validator",
+  "name": "props-tester",
   "version": "0.0.0",
   "description": "Make your React prop testing joyful",
   "main": "index.js",
