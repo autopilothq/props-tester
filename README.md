@@ -1,6 +1,6 @@
 # props tester
-React props are great. Using them a component can interact with outside world easily!
-They complain if provided value from a consumer does not match the spec, helping in terms of debugging.
+React props are great. By using them a component can interact with outside world easily!
+They complain if provided value from a consumer does not match the spec, helping developers in terms of debugging.
 Props also can be used for other purposes as well, take for example component documentation
 via prop spec.
 
