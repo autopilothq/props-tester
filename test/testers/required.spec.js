@@ -15,6 +15,26 @@ describe('testers.required', function() {
 
 
 
+  it('returns true when expected required prop has undefined as value', function() {
+    function Fruity() { return null; }
+    Fruity.propTypes = { fruit: React.PropTypes.any.isRequired };
+
+    var isRequired = requiredTester(Fruity, 'fruit', { fruit: undefined });
+    expect(isRequired).to.equal(true);
+  });
+
+
+
+  it('returns true when expected required prop has null as value', function() {
+    function Bready() { return null; }
+    Bready.propTypes = { bread: React.PropTypes.any.isRequired };
+
+    var isRequired = requiredTester(Bready, 'bread', { message: null });
+    expect(isRequired).to.equal(true);
+  });
+
+
+
   it('returns false when validation error does not relates to the prop', function() {
     function HelloWorld() { return null; }
     HelloWorld.propTypes = {
