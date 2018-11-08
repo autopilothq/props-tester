@@ -1,5 +1,6 @@
 var React          = require('react');
 var PropsValidator = require('../');
+var PropTypes = require('prop-types');
 var validate       = PropsValidator(describe, it);
 
 
@@ -7,7 +8,7 @@ var validate       = PropsValidator(describe, it);
 describe('validate()', function() {
   describe('#instanceOf', function() {
     function HelloWorld() { return null; }
-    HelloWorld.propTypes = { age: React.PropTypes.instanceOf(Number) };
+    HelloWorld.propTypes = { age: PropTypes.instanceOf(Number) };
 
     var props  = { age: new Number(12) };
     var schema = {
@@ -21,7 +22,7 @@ describe('validate()', function() {
 
   describe('#optional', function() {
     function HelloWorld() { return null; }
-    HelloWorld.propTypes = { age: React.PropTypes.number };
+    HelloWorld.propTypes = { age: PropTypes.number };
 
     var props  = { age: 32 };
     var schema = {
@@ -34,7 +35,7 @@ describe('validate()', function() {
 
   describe('#required', function() {
     function HelloWorld() { return null; }
-    HelloWorld.propTypes = { age: React.PropTypes.number.isRequired };
+    HelloWorld.propTypes = { age: PropTypes.number.isRequired };
 
     var props  = { };
     var schema = {
@@ -46,10 +47,10 @@ describe('validate()', function() {
 
 
   describe('#oneOfType', function() {
-    var oneOfType = [React.PropTypes.string, React.PropTypes.instanceOf(Number)];
+    var oneOfType = [PropTypes.string, PropTypes.instanceOf(Number)];
     function HelloWorld() { return null; }
     HelloWorld.propTypes = {
-      age: React.PropTypes.oneOfType(oneOfType)
+      age: PropTypes.oneOfType(oneOfType)
     };
 
     var props  = { age: Number(32) };
@@ -65,7 +66,7 @@ describe('validate()', function() {
     var oneOf = ['C#', 'F#', 'J#'];
     function HelloWorld() { return null; }
     HelloWorld.propTypes = {
-      lang: React.PropTypes.oneOf(oneOf)
+      lang: PropTypes.oneOf(oneOf)
     };
 
     var props  = { lang: 'C#' };
@@ -79,7 +80,7 @@ describe('validate()', function() {
 
   describe('#type', function() {
     function HelloWorld() { return null; }
-    HelloWorld.propTypes = { displayName: React.PropTypes.string };
+    HelloWorld.propTypes = { displayName: PropTypes.string };
 
     var props  = { dispalyName: 'mehdivk' };
     var schema = {

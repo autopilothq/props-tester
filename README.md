@@ -36,8 +36,8 @@ const HelloWorld = props => (
 );
 
 HelloWorld.propTypes = {
-  hello: React.PropTypes.string.isRequired,
-  world: React.PropTypes.string
+  hello: PropTypes.string.isRequired,
+  world: PropTypes.string
 };
 
 HelloWorld.defaultProps = {
